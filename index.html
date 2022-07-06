@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <title>Binar Chapter 4</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- TITLE -->
+        <div class="row d-flex align-items-center justify-content-center py-4">
+            <div class="col-1 text-center d-flex align-items-center justify-content-center">
+                <i class="bi bi-caret-left-fill arrow-left"></i>
+            </div>
+            <div class="col-1">
+                <img class="img-fluid img-logo" src="./assets/logo.png" alt="Logo">
+            </div>
+            <div class="col-10">
+                <p class="title-rps m-0">ROCK PAPER SCISSORS</p>
+            </div>
+        </div>
+
+        <!-- SUIT -->
+        <div class="player-rps mt-0 mt-md-5">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h1 class="subtitle-rps">PLAYER 1</h1>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-player my-3" id="player-batu"
+                                onclick="playerChoice('Batu')">
+                                <img class="img-fluid img-rps img-rps-player my-4" src="./assets/batu.png" alt="batu">
+                            </button>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-player my-3" id="player-kertas"
+                                onclick="playerChoice('Kertas')">
+                                <img class="img-fluid img-rps img-rps-player""
+                                    src=" ./assets/kertas.png" alt="kertas">
+                            </button>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-player my-3" id="player-gunting"
+                                onclick="playerChoice('Gunting')">
+                                <img class="img-fluid img-rps img-rps-player""
+                                    src=" ./assets/gunting.png" alt="gunting">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-12 text-center d-flex align-items-center justify-content-center"
+                    id="text-middle">
+                    <h1 class="text-middle-vs">VS</h1>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h1 class="subtitle-rps">COM</h1>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-com my-3" id="com-batu">
+                                <img class="img-fluid img-rps my-4" src="./assets/batu.png" alt="batu">
+                            </button>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-com my-3" id="com-kertas">
+                                <img class="img-fluid img-rps" src="./assets/kertas.png" alt="kertas">
+                            </button>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <button class="choices-rps cursor-com my-3" id="com-gunting">
+                                <img class="img-fluid img-rps" src="./assets/gunting.png" alt="gunting">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="refresh-button" onClick="history.go(0);">
+                        <img class="img-refresh p-3" src="./assets/refresh.png" alt="Refresh">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
