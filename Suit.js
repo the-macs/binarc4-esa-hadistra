@@ -8,8 +8,14 @@ class Suit {
     choosen = (pId, cId) => {
         var playerElement = document.getElementById("player-" + pId.toLowerCase());
         var comElement = document.getElementById("com-" + cId.toLowerCase());
+
         playerElement.classList.add("choosen");
         comElement.classList.add("choosen");
+
+        // setTimeout(() => {
+        // }, 5000)
+        // playerElement.classList.add("choosen");
+        // comElement.classList.add("choosen");
     }
 
     comChoice = () => {

@@ -1,8 +1,10 @@
 const options = ['batu', 'kertas', 'gunting']
 
+let person = prompt("Please enter your name", "Harry Potter");
+
 let playerSection = `
     <div class="col-12">
-        <h1 class="subtitle-rps">PLAYER 1</h1>
+        <h1 class="subtitle-rps">${person.toUpperCase()}</h1>
     </div>
 `
 let comSection = `
