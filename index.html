@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="index.css">
-    <script src="./index.js"></script>
+    <script src="./Suit.js"></script>
 </head>
 
 <body>
@@ -47,20 +47,20 @@
                         </div>
                         <div class="col-4 col-md-12">
                             <button class="choices-rps cursor-player my-3" id="player-batu"
-                                onclick="playerChoice('Batu')">
+                                onclick="suit.playerChoice('Batu')">
                                 <img class="img-fluid img-rps img-rps-player my-4" src="./assets/batu.png" alt="batu">
                             </button>
                         </div>
                         <div class="col-4 col-md-12">
                             <button class="choices-rps cursor-player my-3" id="player-kertas"
-                                onclick="playerChoice('Kertas')">
+                                onclick="suit.playerChoice('Kertas')">
                                 <img class="img-fluid img-rps img-rps-player""
                                     src=" ./assets/kertas.png" alt="kertas">
                             </button>
                         </div>
                         <div class="col-4 col-md-12">
                             <button class="choices-rps cursor-player my-3" id="player-gunting"
-                                onclick="playerChoice('Gunting')">
+                                onclick="suit.playerChoice('Gunting')">
                                 <img class="img-fluid img-rps img-rps-player""
                                     src=" ./assets/gunting.png" alt="gunting">
                             </button>
@@ -101,7 +101,9 @@
             </div>
         </div>
     </div>
-
+    <script>
+        const suit = new Suit()
+    </script>
 </body>
 
 </html>
