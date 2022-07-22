@@ -41,7 +41,7 @@ class Suit {
 
     playerChoice = (value) => {
         let comChoices = this.comChoice()
-        let resultChoices = resultChoice(value, comChoices)
+        let resultChoices = this.resultChoice(value, comChoices)
 
         this.choosen(value, comChoices)
 
