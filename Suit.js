@@ -1,6 +1,8 @@
 class Suit {
+    #choices
+
     constructor() {
-        this.choices = ['Batu', 'Gunting', 'Kertas']
+        this.#choices = ['batu', 'gunting', 'kertas']
     }
 
     choosen = (pId, cId) => {
@@ -12,11 +14,11 @@ class Suit {
 
     comChoice = () => {
         var randomChoices = Math.floor(Math.random() * 3);
-        return this.choices[randomChoices];
+        return this.#choices[randomChoices];
     }
 
     resultChoice = (playerChoice, comChoice) => {
-        if (playerChoice === "Kertas" && comChoice === "Batu" || playerChoice === "Batu" && comChoice === "Gunting" || playerChoice === "Gunting" && comChoice === "Kertas") {
+        if (playerChoice === "kertas" && comChoice === "batu" || playerChoice === "batu" && comChoice === "gunting" || playerChoice === "gunting" && comChoice === "kertas") {
             document.getElementById("text-middle").innerHTML = '<h1 class="text-middle-win">Player 1 Win</h1>';
             return 'Win'
         }
@@ -51,7 +53,5 @@ class Suit {
         console.log('Computer Choice => ' + comChoices)
         console.log('Result => ' + resultChoices)
         console.log('=====================================================================')
-
     }
-
 }
