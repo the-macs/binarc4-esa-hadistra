@@ -40,12 +40,12 @@ class Suit {
     }
 
     playerChoice = (value) => {
-        let comChoices = comChoice()
+        let comChoices = this.comChoice()
         let resultChoices = resultChoice(value, comChoices)
 
-        choosen(value, comChoices)
+        this.choosen(value, comChoices)
 
-        disablePlayerChoosing();
+        this.disablePlayerChoosing();
 
         console.log('Player Choice => ' + value)
         console.log('Computer Choice => ' + comChoices)
