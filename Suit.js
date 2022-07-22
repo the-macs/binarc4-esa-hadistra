@@ -1,6 +1,6 @@
 class Suit {
     constructor() {
-        this.#choices = ['Batu', 'Gunting', 'Kertas']
+        this.choices = ['Batu', 'Gunting', 'Kertas']
     }
 
     choosen = (pId, cId) => {
