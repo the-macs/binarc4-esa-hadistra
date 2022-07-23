@@ -6,7 +6,7 @@ if (localStorage.getItem("player-name") === null) {
     playerName = prompt("Please enter your name", "the-macs");
 
     while (!playerName || playerName.length > 10) {
-        if (playerName.length > 10)
+        if (playerName && playerName.length > 10)
             alert('Player name cannot more than 10. Please input your name again.')
         playerName = prompt("Please enter your name", "the-macs");
 
