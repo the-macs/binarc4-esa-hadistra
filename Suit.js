@@ -2,24 +2,26 @@ class Suit {
     #choices
 
     constructor() {
-        this.#choices = ['batu', 'gunting', 'kertas']
+        this.#choices = ['batu', 'kertas', 'gunting']
     }
 
-    choosen = (pId, cId) => {
-        var playerElement = document.getElementById("player-" + pId.toLowerCase());
-        var comElement = document.getElementById("com-" + cId.toLowerCase());
-
+    playerChoosen = (pId) => {
+        let playerElement = document.getElementById("player-" + pId.toLowerCase());
         playerElement.classList.add("choosen");
-        comElement.classList.add("choosen");
+    }
 
-        // setTimeout(() => {
-        // }, 5000)
-        // playerElement.classList.add("choosen");
-        // comElement.classList.add("choosen");
+    comChoosen = (cId) => {
+        let comElement = document.getElementById("com-" + cId.toLowerCase());
+        comElement.classList.add("choosen");
+    }
+
+    comUnchoosen = (cId) => {
+        let comElement = document.getElementById("com-" + cId.toLowerCase());
+        comElement.classList.remove("choosen");
     }
 
     comChoice = () => {
-        var randomChoices = Math.floor(Math.random() * 3);
+        let randomChoices = Math.floor(Math.random() * 3)
         return this.#choices[randomChoices];
     }
 
@@ -47,17 +49,58 @@ class Suit {
         }
     }
 
-    playerChoice = (value) => {
+    randomPick = (value) => {
         let comChoices = this.comChoice()
-        let resultChoices = this.resultChoice(value, comChoices)
 
-        this.choosen(value, comChoices)
+        this.playerChoosen(value)
 
-        this.disablePlayerChoosing();
+        let counter = 0
 
-        console.log('Player Choice => ' + value)
-        console.log('Computer Choice => ' + comChoices)
-        console.log('Result => ' + resultChoices)
-        console.log('=====================================================================')
+        let randomInterval = setInterval(() => {
+            this.comChoosen(this.#choices[counter])
+
+            setTimeout(() => {
+                this.comUnchoosen(this.#choices[counter])
+
+                counter++
+
+                counter = counter == 3 ? 0 : counter
+            }, 130)
+        }, 150)
+
+        setTimeout(() => {
+            clearInterval(randomInterval)
+        }, 4900)
+
+        setTimeout(() => {
+            let resultChoices = this.resultChoice(value, comChoices)
+
+            this.comChoosen(comChoices)
+
+            console.log('Player Choice => ' + value)
+            console.log('Computer Choice => ' + comChoices)
+            console.log('Result => ' + resultChoices)
+        }, 5000)
+    }
+
+    playerChoice = (value) => {
+        this.randomPick(value)
+        this.disablePlayerChoosing()
+    }
+
+    static changePlayerName = () => {
+        let playerName = prompt("Please enter your new name", "the-macs");
+
+        if (playerName.length > 10)
+            alert('Player name cannot more than 10.')
+
+        if (playerName && playerName.length <= 10) {
+            localStorage.setItem("player-name", playerName);
+            Suit.refresh()
+        }
+    }
+
+    static refresh = () => {
+        document.location.reload()
     }
 }

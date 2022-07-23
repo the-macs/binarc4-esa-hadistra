@@ -1,14 +1,27 @@
 const options = ['batu', 'kertas', 'gunting']
 
-let person = prompt("Please enter your name", "Harry Potter");
+let playerName
 
-while (!person) {
-    person = prompt("Please enter your name", "Harry Potter");
-};
+if (localStorage.getItem("player-name") === null) {
+    playerName = prompt("Please enter your name", "the-macs");
+
+    if (playerName.length > 10)
+        alert('Player name cannot more than 10. Please input your name again.')
+
+    while (!playerName || playerName > 10) {
+        playerName = prompt("Please enter your name", "the-macs");
+    };
+
+    if (playerName)
+        localStorage.setItem("player-name", playerName);
+} else {
+    playerName = localStorage.getItem("player-name")
+}
 
 let playerSection = `
-    <div class="col-12">
-        <h1 class="subtitle-rps">${person.toUpperCase()}</h1>
+    <div class="col-12 d-inline-block">
+        <h1 class="subtitle-rps d-inline">${playerName.toUpperCase()} </h1>
+        <span role="button" class="d-inline align-top cursor" onclick="Suit.changePlayerName()"><i class="bi bi-pencil"></i></span>
     </div>
 `
 let comSection = `
@@ -38,3 +51,5 @@ options.forEach(function (item) {
 
 document.getElementById('player-section').innerHTML = playerSection
 document.getElementById('com-section').innerHTML = comSection
+
+const suit = new Suit()
