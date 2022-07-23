@@ -70,7 +70,7 @@ class Suit {
 
         setTimeout(() => {
             clearInterval(randomInterval)
-        }, 4900)
+        }, 4500)
 
         setTimeout(() => {
             let resultChoices = this.resultChoice(value, comChoices)
